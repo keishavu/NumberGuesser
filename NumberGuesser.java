@@ -7,6 +7,7 @@ Scanner input = new Scanner(System.in);
 System.out.println("Hello! Welcome to the Number Guesser Game! ");
 System.out.print("Would you like to guess the number I'm thinking of? ");
 String yn;
+//asks user for answer
 yn = input.nextLine();
 if (yn.compareToIgnoreCase("yes")==0) {
 	System.out.println("Let's begin!");
@@ -18,6 +19,7 @@ if (yn.compareToIgnoreCase("yes")==0) {
 	System.out.print("Bound 2: ");
 	bound2 = input.nextInt();
 	System.out.println("Enter your guess of the number: (type 'stop' at any time to stop the program)");
+	// creates case in which bounds are invalid 
 	while (bound1 >= bound2){
 		System.out.println("Invalid bounds. Be sure Bound 2 is greater than Bound 1 and that they are not equal. ");
 		System.out.print("Enter new value for bound 1: ");
@@ -25,6 +27,7 @@ if (yn.compareToIgnoreCase("yes")==0) {
 		System.out.print("Enter new value for bound 2: ");
 		bound2 = input.nextInt();
 	}
+	// picks a random number 
 	int random;
 	random = (int)(Math.random()*(bound2-bound1+1)+bound1);
 	System.out.println("I've picked a number from "+bound1 + " to "+bound2+"!");
@@ -32,6 +35,7 @@ if (yn.compareToIgnoreCase("yes")==0) {
 	int guess;
 	guess = input.nextInt();
 	String stop;
+	//implements a stop if user wants to end the game
 	while (guess != random) {
 		if (guess < bound1 || guess >bound2) {
 			System.out.print("Your guess is out of bounds. Try again! ");
